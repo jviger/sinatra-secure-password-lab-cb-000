@@ -20,7 +20,7 @@ class ApplicationController < Sinatra::Base
     #your code here
     if params[:username] != "" && params[:password] != ""
       User.create(username: params[:username], password: params[:password])
-      erb :login
+      redirect "/login"
     else
       redirect to "/failure"
     end
